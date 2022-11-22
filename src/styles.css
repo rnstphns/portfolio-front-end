@@ -6,3 +6,36 @@ body .footer {
   display: flex;
   flex-direction: column;
 }
+form *{
+  padding: 5px;
+  margin: 2px;
+}
+form div input{
+  background-color: slateblue;
+}
+.message-field{
+  background-color: slateblue;
+  min-height: 200px;
+}
+.alert{
+  color: #a94442;
+}
+.input-label-pair label {
+  flex-direction: column;
+  text-align: left;
+  font-size: small;
+}
+.input-label-pair{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+input, textarea{
+  border-radius: 5px;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948;
+}  
+.ng-touched .ng-invalid:not(form) {
+  border-left: 5px solid #a94442;
+}
