@@ -16,7 +16,7 @@ import { HttpClient } from '@angular/common/http';
           <div class="input-label-pair">
             <label for="name">Name*</label>
             <!-- <span *ngIf="!contactForm.get('Name')?.valid && contactForm.get('Name')?.touched" class="alert">Please enter a name</span>  -->
-            <input formControlName="Name" type="text" placeholder = "Name*" id="name">
+            <input formControlName="GuestName" type="text" placeholder = "Name*" id="name">
           </div>
           <div class="input-label-pair">
             <label for="email">Email*</label>
@@ -35,13 +35,15 @@ import { HttpClient } from '@angular/common/http';
             <button [disabled]="!contactForm.valid" class="text-white bg-[slategray] rounded font-bold text-base sm:text-lg" type = "submit">Submit</button>
 </div>
       </form>
+    <span *ngIf="messageSent">Message successfully sent!</span>
   `,
   styleUrls: ['../../styles.css']
 })
-export class ContactFormComponent implements OnInit {
+export class ContactFormComponent {
 
   contactForm!: FormGroup;
   apiURL: string = "https://csj7tgphj7.execute-api.us-east-1.amazonaws.com/contact";
+  messageSent: boolean = false;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.contactForm = fb.group({
@@ -49,24 +51,17 @@ export class ContactFormComponent implements OnInit {
       Email: ['', Validators.compose([Validators.required, Validators.email])],
       Phone: ['', Validators.pattern('^(\(\d{3}\)|\d{3})-?\d{3}-?\d{4}$')],
       Message: ['', Validators.required],
-      Name: ['', Validators.required]
+      GuestName: ['', Validators.required]
     })
-  }
-
-  ngOnInit(): void {
   }
 
   submitForm() {
     if (this.contactForm.valid) {
       const formValue = JSON.stringify(this.contactForm.getRawValue())
-      console.log(formValue)
+      this.http.post(this.apiURL, formValue).subscribe(res => {
+          if(res === 'Success') this.messageSent = true;
+        }
+      );
     }
-  }
-
-  pullFirst(object: Object) {
-    if (object instanceof Array)
-      return object[0]
-    else
-      return object
   }
 }
