@@ -29,7 +29,7 @@ import { HttpClient } from '@angular/common/http';
           </div>
         </div>
           <div class="flex flex-col"> <textarea formControlName="Message" type="text" placeholder = "Message*" class="message-field" id="message"></textarea>
-          <span *ngIf="!contactForm.get('Message')?.valid && contactForm.get('Message')?.touched" class="alert">Please send me a message (if you want to)</span> 
+          <span *ngIf="!contactForm.get('Message')?.valid && contactForm.get('Message')?.touched" class="alert">Please send me a message! (if you want to)</span> 
         </div>
           <div class="flex flex-col"> 
             <button [disabled]="!contactForm.valid" class="text-white bg-[slategray] rounded font-bold text-base sm:text-lg" type = "submit">Submit</button>
