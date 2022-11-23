@@ -39,3 +39,17 @@ input, textarea{
 .ng-touched .ng-invalid:not(form) {
   border-left: 5px solid #a94442;
 }
+.ed{
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  margin: 5px;
+  padding:5px;
+  background-color: slateblue;
+}
+.ed a,p{
+  justify-content: flex-start;
+  margin: 5px;
+  padding:5px;
+  text-align: left;
+}
