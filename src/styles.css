@@ -43,8 +43,8 @@ input, textarea{
   display: flex;
   flex-direction: row;
   border-radius: 5px;
-  margin: 5px;
-  padding:5px;
+  margin: 10px;
+  padding: 5px;
   background-color: slateblue;
 }
 .ed a,p{
@@ -52,4 +52,31 @@ input, textarea{
   margin: 5px;
   padding:5px;
   text-align: left;
+  font-weight: bold;
+}
+.skill{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  background-color: slateblue;
+}
+.skill h1{
+  min-width: 100%;
+  font-size: x-large;
+  font-weight: bolder;
+  color: aliceblue;
+  padding-bottom: 10px;
+}
+.skill .grid-item{
+  margin: 5px;
+  padding:5px;
+  text-align: center;
+  background-color: #42A948;
+  border-radius: 5px;
+  font-size: larger;
+  font-weight: bold;
 }

@@ -10,17 +10,15 @@ import { HttpClient } from '@angular/common/http';
         <div class="grid grid-cols-2">
           <div class="input-label-pair">
             <label for="title">Title*</label>
-            <!-- <span *ngIf="!contactForm.get('MessageTitle')?.valid && contactForm.get('MessageTitle')?.touched" class="alert">Please enter a title</span>  -->
             <input formControlName="MessageTitle" type="text" placeholder = "Title*" id="title">
           </div>
           <div class="input-label-pair">
             <label for="name">Name*</label>
-            <!-- <span *ngIf="!contactForm.get('Name')?.valid && contactForm.get('Name')?.touched" class="alert">Please enter a name</span>  -->
             <input formControlName="GuestName" type="text" placeholder = "Name*" id="name">
           </div>
           <div class="input-label-pair">
             <label for="email">Email*</label>
-            <!-- <span *ngIf="!contactForm.get('Email')?.valid && contactForm.get('Email')?.dirty" class="alert">Email is not valid</span>  -->
+           
             <input formControlName="Email" type="email" placeholder = "Email*" id = "email">
           </div>
           <div class="input-label-pair">
