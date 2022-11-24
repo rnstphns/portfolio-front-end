@@ -212,15 +212,15 @@
           Blog Posts
         </h2>
         <div class="grid gap-4 grid-cols-1 text-center mt-8">
-          <a
-            href="#todo"
+          <div
+            (click)="redirectToBlog()"
             class="flex flex-col justify-start max-w-xl p-4 hover:bg-slate-700 rounded"
           >
             <h2 class="text-xl sm:text-2xl font-bold text-left">
               Deploying full-stack Angular / Express / MongoDB web apps to AWS
             </h2>
             <p class="font-bold text-left text-violet-400 mt-4">Read More</p>
-          </a>
+          </div>
         </div>
       </div>
       <a id="contact"></a>
